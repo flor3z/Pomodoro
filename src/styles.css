@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: rgb(232, 232, 238);
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.timer-container {
+  background-color: rgb(134, 12, 12);
+  border-radius: 5px;
+  border: 2px solid rgb(42, 42, 42);
+  position: center;
+  top: 4rem;
+  left: 4rem;
+  text-align: center;
+}
+
+.time {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+}
+
+.time-controls {
+  display: block;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.active {
+  background-color: rgb(38, 91, 189);
+  color: #fff;
+}
+
+.btn {
+  border-radius: 10rem;
+  margin: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.btn:hover {
+  background-color: rgb(34, 33, 33);
+  color: #fff;
+  cursor: pointer;
+}
