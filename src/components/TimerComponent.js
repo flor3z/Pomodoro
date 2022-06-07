@@ -18,7 +18,7 @@ export default class TimerComponent extends React.Component {
       shortBreak: DEFAULT_START_TIME.shortBreak,
       longBreak: DEFAULT_START_TIME.longBreak,
       isPlaying: false,
-      curActiveButton: '',
+      curActiveButton: 'focus',
     };
     //isPlaying Logic may need to be swtiched
     this.onTimerToggle = this.onTimerToggle.bind(this);
@@ -63,12 +63,22 @@ export default class TimerComponent extends React.Component {
     }
   }
 
-  onClickReset() {
-    this.setState({
-      isPlaying: false,
-      focus: DEFAULT_START_TIME.focus,
-      seconds: DEFAULT_START_TIME.seconds,
-    });
+  onClickReset(name) {
+    console.log(name);
+    if (name === this.state.curActiveButton) {
+      this.setState({
+        isPlaying: false,
+        focus: DEFAULT_START_TIME[`${name}`],
+        seconds: DEFAULT_START_TIME.seconds,
+      });
+    } else {
+      this.setState({
+        isPlaying: false,
+        focus: DEFAULT_START_TIME.focus,
+        seconds: DEFAULT_START_TIME.seconds,
+      });
+    }
+
     //The reset needs to be updated now, considering I've had to make lots of changes, and now once reset is clicked
     //It resets to 25 mins, instead of the respective time required. (e.g 5 mins or 15 mins depending on the break)
     clearInterval(this.timer);
@@ -77,7 +87,7 @@ export default class TimerComponent extends React.Component {
   //Update --- figured this out!
   //How do I know which mins and seconds to use, depending on name//
   onModeSelect(name) {
-    console.log('Ive been clicked', `${[name]}`);
+    // console.log('Ive been clicked', `${[name]}`);
     if (name !== this.state.curActiveButton) {
       this.setState({
         curActiveButton: name,
@@ -133,7 +143,10 @@ export default class TimerComponent extends React.Component {
           <button className="btn" onClick={this.onTimerToggle}>
             {playOrPause}
           </button>
-          <button className="btn" onClick={this.onClickReset}>
+          <button
+            className="btn"
+            onClick={() => this.onClickReset(this.state.curActiveButton)}
+          >
             Reset
           </button>
         </div>
