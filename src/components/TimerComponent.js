@@ -68,7 +68,7 @@ export default class TimerComponent extends React.Component {
     if (name === this.state.curActiveButton) {
       this.setState({
         isPlaying: false,
-        focus: DEFAULT_START_TIME[`${name}`],
+        focus: DEFAULT_START_TIME[name],
         seconds: DEFAULT_START_TIME.seconds,
       });
     } else {
