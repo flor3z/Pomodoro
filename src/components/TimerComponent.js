@@ -27,7 +27,6 @@ export default class TimerComponent extends React.Component {
   }
 
   onTimerToggle() {
-    //I want the interval to deduct from the total time every second.
     if (!this.state.isPlaying) {
       this.timer = setInterval(() => {
         if (this.state.seconds === 0 && this.state.focus === 0) {
@@ -109,7 +108,7 @@ export default class TimerComponent extends React.Component {
     // const activeClass = this.state.curActiveButton ? 'active' : '';
     return (
       <div className="timer-container">
-        <div>
+        <div className="mode-button-container">
           <button
             className={this.state.curActiveButton === 'focus' ? 'active' : ''}
             name="focus"
