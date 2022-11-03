@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  /* box-sizing: inherit; */
 }
 
 html {
@@ -18,10 +18,23 @@ body {
 
 }
 
+.focus-Bg  {
+  background-color: rgb(167, 24, 24);
+  
+}
+
+.shortBreak-Bg {
+  background-color: rgb(127, 125, 123);
+}
+
+.longBreak-Bg {
+  background-color: rgb(46, 46, 46);
+}
+
 .timer-container {
   overflow: hidden;
-  margin-top: 8rem;
-  height:52rem;
+  padding-top: 4.95rem;
+  height: 80rem;
   background-image: url(../public/icons/tomatoIconFill.png);
   background-repeat: no-repeat;
   background-position: center;

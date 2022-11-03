@@ -107,47 +107,57 @@ export default class TimerComponent extends React.Component {
     const playOrPause = this.state.isPlaying === false ? 'Play' : 'Pause';
     // const activeClass = this.state.curActiveButton ? 'active' : '';
     return (
-      <div className="timer-container">
-        <div className="mode-button-container">
-          <button
-            className={this.state.curActiveButton === 'focus' ? 'active' : ''}
-            name="focus"
-            onClick={(e) => this.onModeSelect(e.target.name)}
-          >
-            Focus
-          </button>
-          <button
-            className={
-              this.state.curActiveButton === 'shortBreak' ? 'active' : ''
-            }
-            name="shortBreak"
-            onClick={(e) => this.onModeSelect(e.target.name)}
-          >
-            Short Break
-          </button>
-          <button
-            className={
-              this.state.curActiveButton === 'longBreak' ? 'active' : ''
-            }
-            name="longBreak"
-            onClick={(e) => this.onModeSelect(e.target.name)}
-          >
-            Long Break
-          </button>
-        </div>
-        {/* <Timer data={this.state} /> */}
-        <Timer minutes={this.state.focus} seconds={this.state.seconds} />
+      <div
+        className={
+          this.state.curActiveButton === 'focus'
+            ? `${this.state.curActiveButton}-Bg`
+            : this.state.curActiveButton === 'shortBreak'
+            ? `${this.state.curActiveButton}-Bg`
+            : 'longBreak-Bg'
+        }
+      >
+        <div className="timer-container">
+          <div className="mode-button-container">
+            <button
+              className={this.state.curActiveButton === 'focus' ? 'active' : ''}
+              name="focus"
+              onClick={(e) => this.onModeSelect(e.target.name)}
+            >
+              Focus
+            </button>
+            <button
+              className={
+                this.state.curActiveButton === 'shortBreak' ? 'active' : ''
+              }
+              name="shortBreak"
+              onClick={(e) => this.onModeSelect(e.target.name)}
+            >
+              Short Break
+            </button>
+            <button
+              className={
+                this.state.curActiveButton === 'longBreak' ? 'active' : ''
+              }
+              name="longBreak"
+              onClick={(e) => this.onModeSelect(e.target.name)}
+            >
+              Long Break
+            </button>
+          </div>
+          {/* <Timer data={this.state} /> */}
+          <Timer minutes={this.state.focus} seconds={this.state.seconds} />
 
-        <div className="time-controls">
-          <button className="btn" onClick={this.onTimerToggle}>
-            {playOrPause}
-          </button>
-          <button
-            className="btn"
-            onClick={() => this.onClickReset(this.state.curActiveButton)}
-          >
-            Reset
-          </button>
+          <div className="time-controls">
+            <button className="btn" onClick={this.onTimerToggle}>
+              {playOrPause}
+            </button>
+            <button
+              className="btn"
+              onClick={() => this.onClickReset(this.state.curActiveButton)}
+            >
+              Reset
+            </button>
+          </div>
         </div>
       </div>
     );
