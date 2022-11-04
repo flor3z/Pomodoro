@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: inherit; */
 }
 
 html {
@@ -9,18 +8,14 @@ html {
 }
 
 body {
-
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
-  background-color: rgb(134, 12, 12);
   line-height: 1.7;
   color: rgb(232, 232, 238);
-
 }
 
 .focus-Bg  {
   background-color: rgb(167, 24, 24);
-  
 }
 
 .shortBreak-Bg {
@@ -33,21 +28,15 @@ body {
 
 .timer-container {
   overflow: hidden;
-  padding-top: 4.95rem;
-  height: 80rem;
+  height: 100vh;
   background-image: url(../public/icons/tomatoIconFill.png);
   background-repeat: no-repeat;
   background-position: center;
   filter: drop-shadow(0.6rem 0.6rem 1rem rgba(0, 0, 0, 0.8));
-  /* border-radius: 5px; */
-  /* border: 2px solid rgb(42, 42, 42); */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* position: center;
-  top: 4rem;
-  left: 4rem; */
   text-align: center;
 }
 
@@ -99,6 +88,8 @@ body {
   margin: 1rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  text-align: center;
+  width: 7.2rem;
 }
 .btn:hover {
   background-color: rgb(34, 33, 33);
