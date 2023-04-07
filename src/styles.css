@@ -29,10 +29,6 @@ body {
 .timer-container {
   overflow: hidden;
   height: 100vh;
-  background-image: url(../public/icons/tomatoIconFill.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(0.6rem 0.6rem 1rem rgba(0, 0, 0, 0.8));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,8 +36,28 @@ body {
   text-align: center;
 }
 
+.background-image {
+  width: 512px;
+  height: 512px;
+  background-image: url(../public/icons/tomatoIconFill.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0.6rem 0.6rem 1rem rgba(0, 0, 0, 0.8));
+}
+
+@media (max-width: 500px) {
+  .background-image {
+    background-size: 70%;
+  }
+}
+
+.all-controls-container {
+  top: 35%;
+  position: relative;
+  z-index: 1;
+}
+
 .mode-button-container {
-  margin-top: .5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,14 +87,10 @@ body {
 .time-controls {
   display: flex;
   justify-content: center;
-  /* top: 40%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
   text-align: center;
 }
 
 .active {
-  /* background-color: rgb(38, 91, 189); */
   background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
 }

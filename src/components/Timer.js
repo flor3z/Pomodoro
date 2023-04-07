@@ -5,7 +5,6 @@ export default class Timer extends React.Component {
     super();
   }
   render() {
-    console.log(this.props.minutes, this.props.seconds);
     return (
       <div className="time">
         <h1>
